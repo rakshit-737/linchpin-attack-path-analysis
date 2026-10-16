@@ -111,7 +111,7 @@ jobs:
               print(r["hosts"], r["k"], r["graph"], t["networkx_yen"], t["gds_yen"], r["speedup_median"])
           print(d["gds_version"], d["neo4j"], d["code"])
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         if: always()
         with: { name: gds-crosscheck, path: artifacts/, if-no-files-found: error }
 
@@ -142,7 +142,7 @@ jobs:
           assert len(d["images"]) == 6, d["images"]
           print(d["code"], *d["images"], sep="\n")
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         if: always()
         with: { name: lab-scan, path: artifacts/lab/, if-no-files-found: error }
       - name: Tear down
@@ -236,7 +236,7 @@ jobs:
         with:
           root_file: linchpin.tex
           working_directory: paper
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         with: { name: preprint, path: paper/linchpin.pdf, if-no-files-found: error }
       # README and the docs site link the committed PDF, so it must say what paper/linchpin.tex says
       - name: The committed PDF matches a fresh build (text, layout ignored)
